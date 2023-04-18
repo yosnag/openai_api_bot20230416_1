@@ -39,7 +39,7 @@ def communicate():
     response = openai.ChatCompletion.create(
         model="gpt-4",
         messages=messages,
-        temperature=1.1
+        temperature=1.2
     )  
 
     bot_message = response["choices"][0]["message"]

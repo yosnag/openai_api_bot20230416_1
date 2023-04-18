@@ -37,8 +37,9 @@ def communicate():
     messages.append(user_message)
 
     response = openai.ChatCompletion.create(
-        model="gpt-3.5-turbo",
-        messages=messages
+        model="gpt-4",
+        messages=messages,
+        temperature=1.1
     )  
 
     bot_message = response["choices"][0]["message"]
@@ -49,7 +50,7 @@ def communicate():
 
 # ユーザーインターフェイスの構築
 st.title("料理専用アシスタント")
-st.write("ver20230416 ChatGPT　model=gpt-4.0,temperature=1.1")
+st.write("ver20230416 ChatGPT　model=gpt-4,temperature=1.1")
 
 user_input = st.text_input("食材や料理名を入力してください。", key="user_input", on_change=communicate)
 
